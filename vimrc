@@ -5,6 +5,7 @@
 "                                                                            "
 "                                                                            "
 " Sections:                                                                  "
+"   00. Plugins ................. Setup Vim Plugins
 "   01. General ................. General Vim behavior                       "
 "   02. Events .................. General autocmd events                     "
 "   03. Theme/Colors ............ Colors, fonts, etc.                        "
@@ -17,6 +18,35 @@
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+filetype off
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 00. Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" Python Specific Plugins
+Plugin 'davidhalter/jedi-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+"
+" Markdown
+Plugin 'plasticboy/vim-markdown'
+
+"Javascript
+Plugin 'othree/javascript-libraries-syntax-vim', {'for': 'javascript'}
+Plugin 'jelera/vim-javascript-syntax', { 'for': 'javascript' } 
+Plugin 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }  
+
+Plugin 'aascenator/L9', {'name': 'newL9'}
+call vundle#end()
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Events                                                                 "
@@ -34,11 +64,13 @@ set ofu=syntaxcomplete#Complete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256              " enable 256-color mode.
+"set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme molokai       " set colorscheme
 
+set background=dark
+colorscheme solarized
 " Prettify JSON files
+
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd Syntax json sou ~/.vim/syntax/json.vim
 
@@ -79,7 +111,7 @@ set visualbell
 " 05. Text Formatting/Layout                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent            " auto-indent
-set tabstop=2             " tab spacing
+set tabstop=4             " tab spacing
 set softtabstop=2         " unify
 set shiftwidth=2          " indent/outdent by 2 columns
 set shiftround            " always indent/outdent to the nearest tabstop
@@ -91,6 +123,10 @@ set nowrap                " don't wrap text
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 06. Custom Commands                                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+
+inoremap jj <Esc><CR>
 
 " Prettify JSON files making them easier to read
 command PrettyJSON %!python -m json.tool
