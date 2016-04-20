@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "   Filename: .vimrc                                                         "
-" Maintainer: Michael J. Smalley <michaeljsmalley@gmail.com>                 "
-"        URL: http://github.com/michaeljsmalley/dotfiles                     "
+"   Adapted From: Michael J. Smalley <michaeljsmalley@gmail.com>             "
+"   URL: http://github.com/jaspajjr/dotfiles                                 "
 "                                                                            "
 "                                                                            "
 " Sections:                                                                  "
@@ -39,10 +39,6 @@ Plugin 'scrooloose/syntastic'
 " Markdown
 Plugin 'plasticboy/vim-markdown'
 
-"Javascript
-Plugin 'othree/javascript-libraries-syntax-vim', {'for': 'javascript'}
-Plugin 'jelera/vim-javascript-syntax', { 'for': 'javascript' } 
-Plugin 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }  
 
 Plugin 'aascenator/L9', {'name': 'newL9'}
 call vundle#end()
