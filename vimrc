@@ -1,7 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "   Filename: .vimrc                                                         "
-" Maintainer: Michael J. Smalley <michaeljsmalley@gmail.com>                 "
-"        URL: http://github.com/michaeljsmalley/dotfiles                     "
+" Maintainer: John Carney
+" URL: http://github.com/jaspajjr/dotfiles                     "
+"
 "                                                                            "
 "                                                                            "
 " Sections:                                                                  "
@@ -36,15 +37,20 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 "
+" JSON
+Plugin 'tpope/vim-jdaddy'
+
 " Markdown
 Plugin 'plasticboy/vim-markdown'
 
+" Docker
+Plugin 'ekalinin/Dockerfile.vim'
+
 "Javascript
-Plugin 'othree/javascript-libraries-syntax-vim', {'for': 'javascript'}
+Plugin 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 Plugin 'jelera/vim-javascript-syntax', { 'for': 'javascript' } 
 Plugin 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }  
-
-Plugin 'aascenator/L9', {'name': 'newL9'}
+Plugin 'ascenator/L9', {'name': 'newL9'}
 call vundle#end()
 filetype plugin indent on
 
@@ -55,8 +61,6 @@ filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 
 " In Makefiles DO NOT use spaces instead of tabs
 autocmd FileType make setlocal noexpandtab
-" In Ruby files, use 2 spaces instead of 4 for tabs
-autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 
 " Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
 set ofu=syntaxcomplete#Complete

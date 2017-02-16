@@ -11,24 +11,13 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="xiong-chiamiov-plus"
 ZSH_THEME="darkblood"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ubuntu zsh-syntax-highlighting python pip sudo knife bundler atom web-search)
+plugins=(git ubuntu zsh-syntax-highlighting python pip sudo knife bundler atom web-search aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,6 +59,9 @@ qfind () {
   find . -exec grep -l -s $1 {} \;
   return 0
 }
+
+## Setting ENV variables
+LD_LIBRARY_PATH='/usr/local/bin'
 
 # Custom exports
 ## Set EDITOR to /usr/bin/vim if Vim is installed
