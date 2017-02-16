@@ -2,7 +2,6 @@
 "   Filename: .vimrc                                                         "
 " Maintainer: John Carney
 " URL: http://github.com/jaspajjr/dotfiles                     "
-"
 "                                                                            "
 "                                                                            "
 " Sections:                                                                  "
