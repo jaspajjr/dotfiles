@@ -30,6 +30,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+Plugin 'Valloric/YouCompleteMe'
+
 " Python Specific Plugins
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
@@ -129,7 +131,7 @@ set nowrap                " don't wrap text
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 
-inoremap jj <Esc><CR>
+inoremap jk <Esc><CR>
 
 " Prettify JSON files making them easier to read
 command PrettyJSON %!python -m json.tool
