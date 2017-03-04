@@ -49,8 +49,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 
 "Javascript
 Plugin 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
-Plugin 'jelera/vim-javascript-syntax', { 'for': 'javascript' } 
-Plugin 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }  
+Plugin 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plugin 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
 Plugin 'ascenator/L9', {'name': 'newL9'}
 call vundle#end()
 filetype plugin indent on
@@ -69,7 +69,7 @@ set ofu=syntaxcomplete#Complete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set t_Co=256              " enable 256-color mode.
+set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
 
 set background=dark
