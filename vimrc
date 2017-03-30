@@ -55,6 +55,9 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 
 "R
 Plugin 'vim-scripts/Vim-R-plugin'
+
+" Rust
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
 
