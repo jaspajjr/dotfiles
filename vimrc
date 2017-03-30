@@ -52,6 +52,9 @@ Plugin 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 Plugin 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plugin 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
 Plugin 'ascenator/L9', {'name': 'newL9'}
+
+"R
+Plugin 'vim-scripts/Vim-R-plugin'
 call vundle#end()
 filetype plugin indent on
 
