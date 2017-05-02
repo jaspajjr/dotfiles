@@ -1,5 +1,6 @@
 oh-my-zsh/
 *.swp
+*.swo
 vim/vim
 vim/.netrwhist
 chef/
