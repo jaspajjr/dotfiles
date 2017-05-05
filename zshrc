@@ -10,7 +10,7 @@ ZSH_THEME="darkblood"
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git ubuntu zsh-syntax-highlighting python pip sudo knife bundler atom web-search aws npm)
+plugins=(git ubuntu zsh-syntax-highlighting python pip sudo knife bundler atom web-search aws npm docker)
 
 source $ZSH/oh-my-zsh.sh
 
