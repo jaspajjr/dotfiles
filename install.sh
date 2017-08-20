@@ -109,12 +109,15 @@ base() {
 		adduser \ 
 		alsa-utils \ 
 		apparmor \ 
+        apt-transport-https \
         curl \
         gcc \
+        htop \
         lsof \
         openvpn \
         openconnect \
         ssh \
+        tmux
 
     # python stuff
   apt-get update
@@ -131,6 +134,8 @@ base() {
 		setuptools \
 		wheel \
 		neovim
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
     setup_sudo
