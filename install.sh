@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 set -e
 
 # expects things to be automated
@@ -77,27 +78,6 @@ setup_sources() {
     echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/99translations
 }
 
-install_docker() {
-	# create docker group
-	sudo groupadd docker
-	sudo gpasswd -a "$TARGET_USER" docker
-
-
-	curl -sSL https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar -xvz \
-		-C /usr/local/bin --strip-components 1
-	chmod +x /usr/local/bin/docker*
-
-	curl -sSL https://raw.githubusercontent.com/jessfraz/dotfiles/master/etc/systemd/system/docker.service > /etc/systemd/system/docker.service
-	curl -sSL https://raw.githubusercontent.com/jessfraz/dotfiles/master/etc/systemd/system/docker.socket > /etc/systemd/system/docker.socket
-
-	systemctl daemon-reload
-	systemctl enable docker
-
-	# update grub with docker configs and power-saving items
-	sed -i.bak 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1 pcie_aspm=force apparmor=1 security=apparmor"/g' /etc/default/grub
-	echo "Docker has been installed. If you want memory management & swap"
-	echo "run update-grub & reboot"
-}
 
 
 # installs the basic stuff that I would want on any install.
@@ -204,7 +184,11 @@ install_docker() {
 }
 
 main() {
-  install_basic_packages
+  # install_basic_packages
+	echo "starting setup sources"
   setup_sources
+	echo "starting base"
   base
 }
+
+main
