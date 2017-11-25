@@ -1,38 +1,19 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   Filename: .vimrc                                                         "
-" Maintainer: John Carney
-" URL: http://github.com/jaspajjr/dotfiles                     "
-"                                                                            "
-"                                                                            "
-" Sections:                                                                  "
-"   00. Plugins ................. Setup Vim Plugins
-"   01. General ................. General Vim behavior                       "
-"   02. Events .................. General autocmd events                     "
-"   03. Theme/Colors ............ Colors, fonts, etc.                        "
-"   04. Vim UI .................. User interface behavior                    "
-"   05. Text Formatting/Layout .. Text, tab, indentation related             "
-"   06. Custom Commands ......... Any custom command aliases                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 01. General                                                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
 filetype off
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 00. Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-fugitive'
 
 Plugin 'Valloric/YouCompleteMe'
 
-" Python Specific Plugins
+" Python
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
@@ -53,29 +34,18 @@ Plugin 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plugin 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
 Plugin 'ascenator/L9', {'name': 'newL9'}
 
-"R
-Plugin 'vim-scripts/Vim-R-plugin'
 
-" Rust
-Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 02. Events                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
-
-" In Makefiles DO NOT use spaces instead of tabs
 autocmd FileType make setlocal noexpandtab
-
-" Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
 set ofu=syntaxcomplete#Complete
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 03. Theme/Colors                                                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set t_Co=256              " enable 256-color mode.
+
 syntax enable             " enable syntax highlighting (previously syntax on).
 
 set background=dark
@@ -104,8 +74,7 @@ else
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 04. Vim UI                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set number                " show line numbers
 set numberwidth=6         " make the number gutter 6 characters wide
 set cul                   " highlight current line
@@ -115,12 +84,10 @@ set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
 set ruler                 " Always show info along bottom.
 set showmatch
-"set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
 set visualbell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 05. Text Formatting/Layout                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set autoindent            " auto-indent
 set tabstop=4             " tab spacing
 set softtabstop=2         " unify
@@ -132,12 +99,9 @@ set smarttab              " use tabs at the start of a line, spaces elsewhere
 set nowrap                " don't wrap text
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 06. Custom Commands                                                        "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
 
-inoremap jk <Esc><CR>
+let g:syntastic_always_populate_loc_list = 1
+inoremap jk <Esc>
 
 " Prettify JSON files making them easier to read
 command PrettyJSON %!python -m json.tool
