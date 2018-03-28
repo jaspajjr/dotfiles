@@ -57,7 +57,7 @@ qfind () {
 }
 
 ## Open vim in container
-alias edit='docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle'
+alias editor='docker run -ti --rm -v $(pwd):/home/developer/workspace jaspajjr/alpine-vim'
 ## Setting ENV variables
 LD_LIBRARY_PATH='/usr/local/bin'
 
