@@ -35,6 +35,8 @@ alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git '
 alias get='git '
+alias db='docker build '
+alias dr='docker run '
 
 ## Vagrant Aliases
 alias vag='vagrant'
@@ -54,6 +56,8 @@ qfind () {
   return 0
 }
 
+## Open vim in container
+alias edit='docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle'
 ## Setting ENV variables
 LD_LIBRARY_PATH='/usr/local/bin'
 
