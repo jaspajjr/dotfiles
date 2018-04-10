@@ -5,8 +5,7 @@ set -e
 # expects things to be automated
 export DEBIAN_FRONTEND=noninteractive
 
-mkdir -p ~/working/github
-mkdir -p ~/working/local
+mkdir  ~/working
 
 # Choose a user account to use for this installation
 get_user() {
@@ -82,13 +81,14 @@ setup_sources() {
 
 # installs the basic stuff that I would want on any install.
 base() {
+  echo "Installing stuff"
   apt-get update
   apt-get -y upgrade
 
   apt-get install -y \
-		adduser \ 
-		alsa-utils \ 
-		apparmor \ 
+		adduser \
+		alsa-utils \
+		apparmor \
         apt-transport-https \
         curl \
         gcc \
@@ -99,7 +99,7 @@ base() {
         ssh \
         tmux
 
-    # python stuff
+  echo "python stuff"
   apt-get update
 
   apt-get install -y \
@@ -175,10 +175,10 @@ install_docker() {
   # create docker group
   sudo groupadd docker
   sudo gpasswd -a "$TARGET_USER" docker
-  
+
   curl -sSL https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar -xvz \
   	-C /usr/local/bin --strip-components 1
-  
+
   chmod +x /usr/local/bin/docker*
 
 }
