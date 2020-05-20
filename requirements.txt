@@ -23,7 +23,7 @@ Flask==0.10.1
 functools32==3.2.3.post2
 geopandas===0.1.0.dev-77b9b3b
 html5lib==0.999
-httplib2==0.8
+httplib2==0.18.0
 ipykernel==4.3.1
 ipython==4.1.2
 ipython-genutils==0.1.0
