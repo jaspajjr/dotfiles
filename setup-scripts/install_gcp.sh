@@ -1,25 +1,8 @@
 #!/bin/bash
+set -e
 
-install_gcp() {
-    CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/cloud.google.gpg
+echo "deb [signed-by=/etc/apt/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
 
-    echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-    sudo apt-get update && sudo apt-get install -y google-cloud-sdk
-    }
-
-install_kubectl() {
-    sudo apt-get install -y kubectl
-}
-
-install_minikube() {
-  sudo apt-get install -y virtualbox && minikube
-}
-
-main() {
-    install_gcp
-    install_kubectl
-}
-
-main
+sudo apt-get update
+sudo apt-get install -y google-cloud-sdk
