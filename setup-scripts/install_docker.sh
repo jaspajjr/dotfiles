@@ -1,36 +1,11 @@
-#! /bin/bash
-set -x
+#!/bin/bash
 set -e
 
-export DEBIAN_FRONTEND=noninteractive
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
-get_user() {
-    if [ -z "${TARGET_USER-}" ]; then
-       PS3='Which user account should be used? '
-       options=($(find /home/* -maxdepth 0 -printf "%f\n" -type d))
-       select opt in "${options[@]}"; do
-           readonly TARGET_USER=$opt
-           break
-       done
-    fi
-}
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-install_docker() {
-
-  # create docker group
-  sudo groupadd docker
-  sudo gpasswd -a "$TARGET_USER" docker
-  
-  curl -sSL https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar -xvz \
-  	-C /usr/local/bin --strip-components 1
-  
-  chmod +x /usr/local/bin/docker*
-
-}
-
-main() {
-    get_user
-    install_docker
-}
-
-main
+# Add current user to docker group to allow running without sudo
+sudo usermod -aG docker "$USER"

@@ -9,3 +9,6 @@ alias ls="ls -Glah"
 
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+. "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
