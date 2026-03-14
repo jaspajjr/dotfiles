@@ -21,10 +21,11 @@ cd ~/dotfiles
 8. Install VS Code
 9. Install AWS CLI
 10. Install GitHub CLI
+11. Install Docker
 
 ## After running
 
-- Log out and back in for the default shell change to take effect
+- Log out and back in for the default shell change and Docker group membership to take effect
 - Run `gcloud auth login` to authenticate with GCP
 - Run `aws configure` to authenticate with AWS
 - Run `gh auth login` to authenticate with GitHub
@@ -39,6 +40,7 @@ dotfiles/
 ├── tmux.conf
 └── setup-scripts/
     ├── install_aws.sh
+    ├── install_docker.sh
     ├── install_gcp.sh
     ├── install_github_cli.sh
     ├── install_starship.sh

@@ -22,7 +22,10 @@ git clone <repo> ~/dotfiles
 
 - **`makesymlinks.sh`** — Full setup entry point: symlinks, zsh, base packages, and all tools
 - **`setup-scripts/`** — Modular install scripts called by `makesymlinks.sh`:
+  - `install_aws.sh` — AWS CLI
+  - `install_docker.sh` — Docker CE + Docker Compose plugin
   - `install_gcp.sh` — Google Cloud SDK
+  - `install_github_cli.sh` — GitHub CLI
   - `install_starship.sh` — Starship prompt
   - `install_uv.sh` — uv Python package manager
   - `install_vscode.sh` — Visual Studio Code

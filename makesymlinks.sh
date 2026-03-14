@@ -98,3 +98,6 @@ done
 
 # Install GitHub CLI
 "$dir/setup-scripts/install_github_cli.sh"
+
+# Install Docker
+"$dir/setup-scripts/install_docker.sh"
