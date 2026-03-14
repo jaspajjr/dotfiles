@@ -1,6 +1,3 @@
-# Explicitly configured $PATH variable
-export PATH="/usr/local/git/bin:$PATH"
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -9,17 +6,13 @@ ZSH_THEME=""  # Prompt handled by Starship
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git python pip sudo kubectl docker terraform gcloud aws uv)
+plugins=(git python pip sudo kubectl docker terraform gcloud aws)
 
 source $ZSH/oh-my-zsh.sh
 
 # Put any proprietary or private functions/values in ~/.private, and this will source them
 if [ -f $HOME/.private ]; then
   source $HOME/.private
-fi
-
-if [ -f $HOME/.profile ]; then
-  source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
 # Shell Aliases
@@ -48,12 +41,6 @@ qfind () {
   return 0
 }
 
-
-# Custom exports
-## Set EDITOR to /usr/bin/vim if Vim is installed
-if [ -f /usr/bin/vim ]; then
-  export EDITOR=/usr/bin/vim
-fi
 
 
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"

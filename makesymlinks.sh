@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 ############################
 # .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
@@ -8,7 +9,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc zshrc oh-my-zsh private"    # list of files/folders to symlink in homedir
+files="bashrc zshrc oh-my-zsh private"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -63,7 +64,8 @@ sudo apt-get install -y \
     htop \
     lsof \
     ssh \
-    tmux
+    tmux \
+    unzip
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
@@ -90,3 +92,6 @@ done
 
 # Install VS Code
 "$dir/setup-scripts/install_vscode.sh"
+
+# Install AWS CLI
+"$dir/setup-scripts/install_aws.sh"

@@ -32,4 +32,4 @@ git clone <repo> ~/dotfiles
 
 **zshrc**: Uses oh-my-zsh with `darkblood` theme. Plugins: `git ubuntu python pip sudo kubectl bundler web-search docker terraform`. Sources `~/.private` for secrets. NVM and GCP SDK paths sourced if present.
 
-**Symlinked files**: `bashrc`, `vimrc`, `zshrc`, `oh-my-zsh/`. Sensitive config goes in `~/private` (gitignored).
+**Symlinked files**: `bashrc`, `zshrc`, `oh-my-zsh/`. Sensitive config goes in `~/private` (gitignored).
