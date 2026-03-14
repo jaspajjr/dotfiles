@@ -101,3 +101,12 @@ done
 
 # Install Docker
 "$dir/setup-scripts/install_docker.sh"
+
+# Install Discord
+"$dir/setup-scripts/install_discord.sh"
+
+# Install Slack
+"$dir/setup-scripts/install_slack.sh"
+
+# Install Chrome
+"$dir/setup-scripts/install_chrome.sh"
