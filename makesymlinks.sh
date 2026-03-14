@@ -9,7 +9,7 @@ set -e
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc zshrc tmux.conf oh-my-zsh private"    # list of files/folders to symlink in homedir
+files="bashrc zshrc tmux.conf oh-my-zsh"    # list of files/folders to symlink in homedir
 
 ##########
 
