@@ -12,7 +12,7 @@ cd ~/dotfiles
 
 `makesymlinks.sh` will:
 1. Back up any existing dotfiles to `~/dotfiles_old/`
-2. Create symlinks in `~/` for `bashrc`, `zshrc`, `tmux.conf`, and `oh-my-zsh`
+2. Create symlinks in `~/` for `bashrc`, `zshrc`, `tmux.conf`, `oh-my-zsh`, and `.private`
 3. Install zsh and set it as the default shell
 4. Install base packages: `curl`, `htop`, `lsof`, `ssh`, `tmux`, `unzip`
 5. Install Starship prompt
