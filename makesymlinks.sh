@@ -110,3 +110,6 @@ done
 
 # Install Chrome
 "$dir/setup-scripts/install_chrome.sh"
+
+# Install Terraform
+"$dir/setup-scripts/install_terraform.sh"

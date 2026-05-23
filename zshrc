@@ -6,7 +6,7 @@ ZSH_THEME=""  # Prompt handled by Starship
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git python pip sudo kubectl docker terraform gcloud aws gh)
+plugins=(git python pip sudo kubectl docker terraform gcloud aws gh direnv)
 
 source $ZSH/oh-my-zsh.sh
 
