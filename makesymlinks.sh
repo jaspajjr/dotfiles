@@ -65,7 +65,8 @@ sudo apt-get install -y \
     lsof \
     ssh \
     tmux \
-    unzip
+    unzip \
+    xclip
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
@@ -80,6 +81,9 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -sf "$dir/$file" ~/.$file
 done
+
+# Install Nerd Font
+"$dir/setup-scripts/install_nerd_font.sh"
 
 # Install Starship prompt
 "$dir/setup-scripts/install_starship.sh"
@@ -113,3 +117,4 @@ done
 
 # Install Terraform
 "$dir/setup-scripts/install_terraform.sh"
+
