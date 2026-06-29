@@ -26,6 +26,8 @@ git clone <repo> ~/dotfiles
   - `install_docker.sh` — Docker CE + Docker Compose plugin
   - `install_gcp.sh` — Google Cloud SDK
   - `install_github_cli.sh` — GitHub CLI
+  - `install_chrome.sh` — Google Chrome
+  - `install_discord.sh` — Discord
   - `install_starship.sh` — Starship prompt
   - `install_uv.sh` — uv Python package manager
   - `install_vscode.sh` — Visual Studio Code
