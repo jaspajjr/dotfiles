@@ -106,6 +106,9 @@ done
 # Install Docker
 "$dir/setup-scripts/install_docker.sh"
 
+# Install Docker Compose
+"$dir/setup-scripts/install_docker_compose.sh"
+
 # Install Discord
 "$dir/setup-scripts/install_discord.sh"
 
